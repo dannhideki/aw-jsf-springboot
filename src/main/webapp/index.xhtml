@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view contentType="text/html" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
+	<html>
+
+<h:head>
+
+	<!-- For Bootstrap responsive grid -->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+
+</h:head>
+
+<h:body>
+
+	<h:form id="form">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<p:messages globalOnly="true" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<p:panel header="Form" styleClass="form-horizontal">
+						<div class="form-group">
+							<div class="col-sm-9">
+								<p>
+									<h:commandLink action="listaCategorias">
+										<h:outputText value="Listar Categorias" />
+									</h:commandLink>
+								</p>
+								<p>
+									<h:commandLink action="#{categoriaMB.criarNovo()}">
+										<h:outputText value="Cadastrar Nova Categoria" />
+									</h:commandLink>
+								</p>
+							</div>
+						</div>
+					</p:panel>
+				</div>
+			</div>
+		</div>
+
+	</h:form>
+</h:body>
+
+	</html>
+</f:view>
