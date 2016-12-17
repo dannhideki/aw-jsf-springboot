@@ -9,7 +9,7 @@
         <h:outputStylesheet library="css" name="estilosAplicacao.css" />
     </h:head>
     <h:body>
-        <h:form>
+        <h:form prependId="false">
             <h:panelGrid columns="2" columnClasses="colunaEsquerda, colunaDireita"
                          rowClasses="normal" headerClass="tituloFormulario"
                          styleClass="tabelaGC">
@@ -25,8 +25,20 @@
                                              value="#{categoriaMB.categoria.ativo}"/>
                 </h:panelGroup>
                 <h:outputLabel for="cDescricao" value="Descricao"/>
-                <h:inputText id="cDescricao" value="#{categoriaMB.categoria.descricao}"
-                             size="40"/>
+                <h:panelGroup>
+                    <h:inputText id="cDescricao" value="#{categoriaMB.categoria.descricao}"
+                                 size="40">
+                        <f:validateLength minimum="5" maximum="30" />
+                    </h:inputText>
+                    <h:message for="cDescricao" />
+                </h:panelGroup>
+                <h:outputLabel for="cData" value="Data (dd/mm/yyyy)"/>
+                <h:panelGroup>
+                    <h:inputText id="cData" value="#{categoriaMB.data}" validator="#{categoriaMB.validaData}" required="true">
+                        <f:convertDateTime pattern="dd/MM/yyyy" />
+                    </h:inputText>
+                    <h:message for="cData" />
+                </h:panelGroup>
                 <h:outputText value=""/>
                 <h:commandButton value="Salvar" action="#{categoriaMB.salvar}"/>
             </h:panelGrid>
