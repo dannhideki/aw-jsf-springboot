@@ -10,38 +10,7 @@
     </h:head>
     <h:body>
         <h:form prependId="false">
-            <h:panelGrid columns="2" columnClasses="colunaEsquerda, colunaDireita"
-                         rowClasses="normal" headerClass="tituloFormulario"
-                         styleClass="tabelaGC">
-                <f:facet name="header">
-                    <h:outputText value="Cadastro de categoria"/>
-                </f:facet>
-                <h:outputLabel for="cId" value="ID"/>
-                <h:panelGroup>
-                    <h:inputText id="cId" value="#{categoriaMB.categoria.id}"
-                                 disabled="true" maxlength="5" size="5"/>
-                    <h:outputLabel for="cAtivo" value="Ativo"/>
-                    <h:selectBooleanCheckbox id="cAtivo"
-                                             value="#{categoriaMB.categoria.ativo}"/>
-                </h:panelGroup>
-                <h:outputLabel for="cDescricao" value="Descricao"/>
-                <h:panelGroup>
-                    <h:inputText id="cDescricao" value="#{categoriaMB.categoria.descricao}"
-                                 size="40">
-                        <f:validateLength minimum="5" maximum="30" />
-                    </h:inputText>
-                    <h:message for="cDescricao" />
-                </h:panelGroup>
-                <h:outputLabel for="cData" value="Data (dd/mm/yyyy)"/>
-                <h:panelGroup>
-                    <h:inputText id="cData" value="#{categoriaMB.data}" validator="#{categoriaMB.validaData}" required="true">
-                        <f:convertDateTime pattern="dd/MM/yyyy" />
-                    </h:inputText>
-                    <h:message for="cData" />
-                </h:panelGroup>
-                <h:outputText value=""/>
-                <h:commandButton value="Salvar" action="#{categoriaMB.salvar}"/>
-            </h:panelGrid>
+            <!-- insira aqui o código pedido na apostila -->
         </h:form>
     </h:body>
 </html>
